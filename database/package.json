@@ -1,0 +1,6 @@
+{
+  "name": "@exmero/database",
+  "version": "0.0.1",
+  "private": true,
+  "description": "ExMero Drizzle schema + migraciones — Proceso 1+"
+}
