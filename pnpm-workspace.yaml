@@ -1,0 +1,16 @@
+packages:
+  - "frontend"
+  - "backend"
+  - "packages/*"
+  - "database"
+
+allowBuilds:
+  sharp: true
+  unrs-resolver: true
+
+onlyBuiltDependencies:
+  - sharp
+  - unrs-resolver
+
+settings:
+  confirmModulesPurge: false
