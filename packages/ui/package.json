@@ -8,8 +8,17 @@
     "lint": "echo \"No lint configured yet\"",
     "typecheck": "tsc --noEmit"
   },
+  "dependencies": {
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^3.6.0"
+  },
+  "peerDependencies": {
+    "react": "^18 || ^19"
+  },
   "devDependencies": {
     "@exmero/config": "workspace:*",
+    "@types/react": "^19",
     "typescript": "^5"
   }
 }
