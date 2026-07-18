@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
@@ -10,8 +10,20 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "ExMero",
+  title: {
+    default: "ExMero",
+    template: "%s · ExMero",
+  },
   description: "El mérito, entrenado.",
+  applicationName: "ExMero",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  themeColor: "#2f9fd3", // --blue-500
 };
 
 export default function RootLayout({
