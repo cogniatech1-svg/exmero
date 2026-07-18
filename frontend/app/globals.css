@@ -1,26 +1,183 @@
 @import "tailwindcss";
 
+/* ─────────────────────────────────────────────────────────────────
+   ExMero Design Tokens
+   Fuente de verdad: 01_Marca/referencias/ (imágenes de Mero)
+   Paleta extraída del personaje mascota y estados del producto.
+   NO modificar sin actualizar primero 01_Marca/marca.md
+───────────────────────────────────────────────────────────────── */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Mero Blue — color primario (piel del personaje) */
+  --blue-50:  #edf7fc;
+  --blue-100: #cbeaf8;
+  --blue-200: #9dd6f1;
+  --blue-300: #6ec1ea;
+  --blue-400: #54b3e3;
+  --blue-500: #4badd9;
+  --blue-600: #2f90be;
+  --blue-700: #22729b;
+  --blue-800: #185472;
+  --blue-900: #0f364a;
+
+  /* Navy — color secundario (hoodie y aleta de Mero) */
+  --navy-50:  #f0f2f8;
+  --navy-100: #d8dcec;
+  --navy-200: #b0b9d8;
+  --navy-300: #7a88bf;
+  --navy-400: #4d5fa6;
+  --navy-500: #2e3f8e;
+  --navy-600: #1f2e6e;
+  --navy-700: #152052;
+  --navy-800: #0f1b3d;
+  --navy-900: #070e22;
+
+  /* Accent Teal — (cordones del hoodie de Mero) */
+  --teal-50:  #e5fdfe;
+  --teal-100: #b3f6f8;
+  --teal-200: #80eff3;
+  --teal-300: #4de8ee;
+  --teal-400: #1ae1ea;
+  --teal-500: #00c4cc;
+  --teal-600: #009da5;
+  --teal-700: #00777e;
+  --teal-800: #005157;
+  --teal-900: #002b30;
+
+  /* Gold — logros, trofeos, gamificación */
+  --gold-50:  #fef8ec;
+  --gold-100: #fdedc8;
+  --gold-200: #fbdfa0;
+  --gold-300: #f9d178;
+  --gold-400: #f7c250;
+  --gold-500: #f2a429;
+  --gold-600: #d98710;
+  --gold-700: #b0690a;
+  --gold-800: #874e05;
+  --gold-900: #5e3402;
+
+  /* Destructive — errores y alertas (triángulo del estado Error) */
+  --red-50:  #fef2ef;
+  --red-100: #fdd9d0;
+  --red-200: #fab4a2;
+  --red-300: #f68f74;
+  --red-400: #f36946;
+  --red-500: #e03a1b;
+  --red-600: #c02d12;
+  --red-700: #9f210b;
+  --red-800: #7f1607;
+  --red-900: #5f0c04;
+
+  /* Semantic — light mode */
+  --background:          #ffffff;
+  --surface:             #f5f7fa;
+  --surface-2:           #edf0f5;
+  --border:              #dde3ec;
+  --border-subtle:       #eef1f6;
+  --foreground:          var(--navy-800);
+  --foreground-muted:    #4a5c7a;
+  --foreground-subtle:   #8fa0bc;
+
+  /* Shadows (tintadas con navy para coherencia cromática) */
+  --shadow-xs: 0 1px 2px 0 rgb(15 27 61 / 0.05);
+  --shadow-sm: 0 1px 3px 0 rgb(15 27 61 / 0.08), 0 1px 2px -1px rgb(15 27 61 / 0.06);
+  --shadow-md: 0 4px 6px -1px rgb(15 27 61 / 0.08), 0 2px 4px -2px rgb(15 27 61 / 0.06);
+  --shadow-lg: 0 10px 15px -3px rgb(15 27 61 / 0.08), 0 4px 6px -4px rgb(15 27 61 / 0.06);
+  --shadow-xl: 0 20px 25px -5px rgb(15 27 61 / 0.10), 0 8px 10px -6px rgb(15 27 61 / 0.08);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  /* ── Paleta primaria (Mero Blue) ── */
+  --color-primary-50:  var(--blue-50);
+  --color-primary-100: var(--blue-100);
+  --color-primary-200: var(--blue-200);
+  --color-primary-300: var(--blue-300);
+  --color-primary-400: var(--blue-400);
+  --color-primary-500: var(--blue-500);
+  --color-primary-600: var(--blue-600);
+  --color-primary-700: var(--blue-700);
+  --color-primary-800: var(--blue-800);
+  --color-primary-900: var(--blue-900);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* ── Paleta navy ── */
+  --color-navy-50:  var(--navy-50);
+  --color-navy-100: var(--navy-100);
+  --color-navy-200: var(--navy-200);
+  --color-navy-300: var(--navy-300);
+  --color-navy-400: var(--navy-400);
+  --color-navy-500: var(--navy-500);
+  --color-navy-600: var(--navy-600);
+  --color-navy-700: var(--navy-700);
+  --color-navy-800: var(--navy-800);
+  --color-navy-900: var(--navy-900);
+
+  /* ── Paleta accent (teal) ── */
+  --color-accent-50:  var(--teal-50);
+  --color-accent-100: var(--teal-100);
+  --color-accent-200: var(--teal-200);
+  --color-accent-300: var(--teal-300);
+  --color-accent-400: var(--teal-400);
+  --color-accent-500: var(--teal-500);
+  --color-accent-600: var(--teal-600);
+  --color-accent-700: var(--teal-700);
+  --color-accent-800: var(--teal-800);
+  --color-accent-900: var(--teal-900);
+
+  /* ── Paleta gold ── */
+  --color-gold-50:  var(--gold-50);
+  --color-gold-100: var(--gold-100);
+  --color-gold-200: var(--gold-200);
+  --color-gold-300: var(--gold-300);
+  --color-gold-400: var(--gold-400);
+  --color-gold-500: var(--gold-500);
+  --color-gold-600: var(--gold-600);
+  --color-gold-700: var(--gold-700);
+  --color-gold-800: var(--gold-800);
+  --color-gold-900: var(--gold-900);
+
+  /* ── Paleta destructive ── */
+  --color-destructive-50:  var(--red-50);
+  --color-destructive-100: var(--red-100);
+  --color-destructive-200: var(--red-200);
+  --color-destructive-300: var(--red-300);
+  --color-destructive-400: var(--red-400);
+  --color-destructive-500: var(--red-500);
+  --color-destructive-600: var(--red-600);
+  --color-destructive-700: var(--red-700);
+  --color-destructive-800: var(--red-800);
+  --color-destructive-900: var(--red-900);
+
+  /* ── Semánticos ── */
+  --color-background:        var(--background);
+  --color-surface:           var(--surface);
+  --color-surface-2:         var(--surface-2);
+  --color-border:            var(--border);
+  --color-border-subtle:     var(--border-subtle);
+  --color-foreground:        var(--foreground);
+  --color-foreground-muted:  var(--foreground-muted);
+  --color-foreground-subtle: var(--foreground-subtle);
+
+  /* ── Tipografía ── */
+  --font-sans: var(--font-plus-jakarta-sans), ui-sans-serif, system-ui, sans-serif;
+
+  /* ── Radios (estilo suave, coherente con la redondez de Mero) ── */
+  --radius-xs:   0.25rem;   /* 4px  */
+  --radius-sm:   0.5rem;    /* 8px  */
+  --radius-md:   0.75rem;   /* 12px */
+  --radius-lg:   1rem;      /* 16px — cards */
+  --radius-xl:   1.5rem;    /* 24px */
+  --radius-2xl:  2rem;      /* 32px */
+  --radius-full: 9999px;
+
+  /* ── Sombras ── */
+  --shadow-xs: var(--shadow-xs);
+  --shadow-sm: var(--shadow-sm);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+  --shadow-xl: var(--shadow-xl);
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
