@@ -24,7 +24,7 @@ export function BottomNav() {
       className="fixed bottom-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-t border-border"
       style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
     >
-      <div className="max-w-md mx-auto flex items-end justify-around h-16 px-1">
+      <div className="max-w-md mx-auto flex items-end h-16">
         {NAV_ITEMS.map(({ href, icon: Icon, label }) => (
           <NavItem
             key={href}
@@ -53,7 +53,7 @@ function NavItem({
   return (
     <Link
       href={href}
-      className="flex flex-col items-center gap-0.5 pt-2 pb-1 px-2 min-w-[52px]"
+      className="flex-1 flex flex-col items-center gap-0.5 pt-2 pb-1"
     >
       <Icon
         size={22}
@@ -62,7 +62,7 @@ function NavItem({
       />
       <span
         className={cn(
-          "text-[10px] font-semibold leading-none",
+          "text-[11px] font-semibold leading-none",
           active ? "text-primary" : "text-foreground-subtle"
         )}
       >
