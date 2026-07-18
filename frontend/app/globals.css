@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
 /* ─────────────────────────────────────────────────────────────────
    ExMero Design Tokens
@@ -77,6 +78,29 @@
   --foreground:          var(--navy-800);
   --foreground-muted:    #4a5c7a;
   --foreground-subtle:   #8fa0bc;
+
+  /* shadcn/ui semantic variables — mapeados a tokens Mero */
+  --primary:             var(--blue-500);
+  --primary-foreground:  #ffffff;
+  --secondary:           var(--surface);
+  --secondary-foreground: var(--navy-800);
+  --muted:               var(--surface);
+  --muted-foreground:    var(--foreground-muted);
+  --accent:              var(--teal-500);
+  --accent-foreground:   var(--navy-900);
+  --destructive:         var(--red-500);
+  --destructive-foreground: #ffffff;
+  --card:                #ffffff;
+  --card-foreground:     var(--navy-800);
+  --popover:             #ffffff;
+  --popover-foreground:  var(--navy-800);
+  --input:               var(--border);
+  --ring:                var(--blue-400);
+  --chart-1:             var(--blue-500);
+  --chart-2:             var(--teal-500);
+  --chart-3:             var(--gold-500);
+  --chart-4:             var(--navy-500);
+  --chart-5:             var(--red-500);
 
   /* Shadows (tintadas con navy para coherencia cromática) */
   --shadow-xs: 0 1px 2px 0 rgb(15 27 61 / 0.05);
@@ -168,6 +192,29 @@
   --radius-xl:   1.5rem;    /* 24px */
   --radius-2xl:  2rem;      /* 32px */
   --radius-full: 9999px;
+
+  /* ── shadcn/ui — semánticos de componentes ── */
+  --color-primary:              var(--primary);
+  --color-primary-foreground:   var(--primary-foreground);
+  --color-secondary:            var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted:                var(--muted);
+  --color-muted-foreground:     var(--muted-foreground);
+  --color-accent:               var(--accent);
+  --color-accent-foreground:    var(--accent-foreground);
+  --color-destructive:          var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-card:                 var(--card);
+  --color-card-foreground:      var(--card-foreground);
+  --color-popover:              var(--popover);
+  --color-popover-foreground:   var(--popover-foreground);
+  --color-input:                var(--input);
+  --color-ring:                 var(--ring);
+  --color-chart-1:              var(--chart-1);
+  --color-chart-2:              var(--chart-2);
+  --color-chart-3:              var(--chart-3);
+  --color-chart-4:              var(--chart-4);
+  --color-chart-5:              var(--chart-5);
 
   /* ── Sombras ── */
   --shadow-xs: var(--shadow-xs);
