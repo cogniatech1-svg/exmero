@@ -2,14 +2,15 @@
 @import "tw-animate-css";
 
 /* ─────────────────────────────────────────────────────────────────
-   ExMero Design Tokens
-   Fuente de verdad: 01_Marca/referencias/ (imágenes de Mero)
-   Paleta extraída del personaje mascota y estados del producto.
-   NO modificar sin actualizar primero 01_Marca/marca.md
+   ExMero Design Tokens — v1.1
+   Fuente de verdad: design/source_of_truth/ (cuando quede congelada)
+   Paleta extraída del personaje Mero y la identidad oficial de marca.
+   Ver: docs/arquitectura/DECISIONES_DE_DISENO.md
+   NO modificar sin actualizar primero BRAND_SOURCE_OF_TRUTH.md
 ───────────────────────────────────────────────────────────────── */
 
 :root {
-  /* Mero Blue — color primario (piel del personaje) */
+  /* ── Mero Blue — color primario (piel del personaje) ── */
   --blue-50:  #edf7fc;
   --blue-100: #cbeaf8;
   --blue-200: #9dd6f1;
@@ -21,7 +22,7 @@
   --blue-800: #185472;
   --blue-900: #0f364a;
 
-  /* Navy — color secundario (hoodie y aleta de Mero) */
+  /* ── Navy — color secundario (hoodie y aleta de Mero) ── */
   --navy-50:  #f0f2f8;
   --navy-100: #d8dcec;
   --navy-200: #b0b9d8;
@@ -33,7 +34,7 @@
   --navy-800: #0f1b3d;
   --navy-900: #070e22;
 
-  /* Accent Teal — (cordones del hoodie de Mero) */
+  /* ── Teal — acento (cordones del hoodie de Mero) ── */
   --teal-50:  #e5fdfe;
   --teal-100: #b3f6f8;
   --teal-200: #80eff3;
@@ -45,7 +46,7 @@
   --teal-800: #005157;
   --teal-900: #002b30;
 
-  /* Gold — logros, trofeos, gamificación */
+  /* ── Gold — logros, trofeos, gamificación ── */
   --gold-50:  #fef8ec;
   --gold-100: #fdedc8;
   --gold-200: #fbdfa0;
@@ -57,7 +58,7 @@
   --gold-800: #874e05;
   --gold-900: #5e3402;
 
-  /* Destructive — errores y alertas (triángulo del estado Error) */
+  /* ── Destructive — errores y alertas ── */
   --red-50:  #fef2ef;
   --red-100: #fdd9d0;
   --red-200: #fab4a2;
@@ -69,17 +70,22 @@
   --red-800: #7f1607;
   --red-900: #5f0c04;
 
-  /* Semantic — light mode */
-  --background:          #ffffff;
-  --surface:             #f5f7fa;
-  --surface-2:           #edf0f5;
-  --border:              #dde3ec;
-  --border-subtle:       #eef1f6;
-  --foreground:          var(--navy-800);
-  --foreground-muted:    #4a5c7a;
-  --foreground-subtle:   #8fa0bc;
+  /* ── Semánticos — modo claro ──
+     Paleta cálida: fondos off-white, bordes beige, texto navy.
+     Diferencia clave con v1.0: eliminados los grises azulados fríos.
+  ── */
+  --background:        #faf9f6;
+  --surface:           #f1efe9;
+  --surface-2:         #e8e6e0;
+  --border:            #ece9e2;
+  --border-subtle:     #f2f0eb;
+  --foreground:        var(--navy-800);
+  --foreground-muted:  #7a7f86;
+  --foreground-subtle: #b7b2a6;
 
-  /* shadcn/ui semantic variables — mapeados a tokens Mero */
+  /* ── shadcn/ui — semánticos de componentes ──
+     Mapeados a tokens Mero. El primario es siempre Mero Blue.
+  ── */
   --primary:             var(--blue-500);
   --primary-foreground:  #ffffff;
   --secondary:           var(--surface);
@@ -102,7 +108,7 @@
   --chart-4:             var(--navy-500);
   --chart-5:             var(--red-500);
 
-  /* Shadows (tintadas con navy para coherencia cromática) */
+  /* ── Sombras (tintadas con navy) ── */
   --shadow-xs: 0 1px 2px 0 rgb(15 27 61 / 0.05);
   --shadow-sm: 0 1px 3px 0 rgb(15 27 61 / 0.08), 0 1px 2px -1px rgb(15 27 61 / 0.06);
   --shadow-md: 0 4px 6px -1px rgb(15 27 61 / 0.08), 0 2px 4px -2px rgb(15 27 61 / 0.06);
@@ -135,17 +141,17 @@
   --color-navy-800: var(--navy-800);
   --color-navy-900: var(--navy-900);
 
-  /* ── Paleta accent (teal) ── */
-  --color-accent-50:  var(--teal-50);
-  --color-accent-100: var(--teal-100);
-  --color-accent-200: var(--teal-200);
-  --color-accent-300: var(--teal-300);
-  --color-accent-400: var(--teal-400);
-  --color-accent-500: var(--teal-500);
-  --color-accent-600: var(--teal-600);
-  --color-accent-700: var(--teal-700);
-  --color-accent-800: var(--teal-800);
-  --color-accent-900: var(--teal-900);
+  /* ── Paleta teal ── */
+  --color-teal-50:  var(--teal-50);
+  --color-teal-100: var(--teal-100);
+  --color-teal-200: var(--teal-200);
+  --color-teal-300: var(--teal-300);
+  --color-teal-400: var(--teal-400);
+  --color-teal-500: var(--teal-500);
+  --color-teal-600: var(--teal-600);
+  --color-teal-700: var(--teal-700);
+  --color-teal-800: var(--teal-800);
+  --color-teal-900: var(--teal-900);
 
   /* ── Paleta gold ── */
   --color-gold-50:  var(--gold-50);
@@ -181,16 +187,22 @@
   --color-foreground-muted:  var(--foreground-muted);
   --color-foreground-subtle: var(--foreground-subtle);
 
-  /* ── Tipografía ── */
-  --font-sans: var(--font-plus-jakarta-sans), ui-sans-serif, system-ui, sans-serif;
+  /* ── Tipografía ──
+     Manrope: toda la interfaz funcional.
+     Source Serif 4: solo títulos editoriales y frases de Mero con peso emocional.
+  ── */
+  --font-sans:  var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-source-serif-4), ui-serif, Georgia, serif;
 
-  /* ── Radios (estilo suave, coherente con la redondez de Mero) ── */
+  /* ── Radios ──
+     12px para componentes, 20px definido via rounded-[20px] en sheets/modales.
+  ── */
   --radius-xs:   0.25rem;   /* 4px  */
   --radius-sm:   0.5rem;    /* 8px  */
-  --radius-md:   0.75rem;   /* 12px */
+  --radius-md:   0.75rem;   /* 12px — componentes estándar */
   --radius-lg:   1rem;      /* 16px — cards */
-  --radius-xl:   1.5rem;    /* 24px */
-  --radius-2xl:  2rem;      /* 32px */
+  --radius-xl:   1.25rem;   /* 20px — sheets, modales */
+  --radius-2xl:  1.5rem;    /* 24px */
   --radius-full: 9999px;
 
   /* ── shadcn/ui — semánticos de componentes ── */
