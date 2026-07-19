@@ -4,6 +4,7 @@ export {
   mockMisiones,
   mockEstadisticas,
   mockLogros,
+  mockMensajeMero,
 } from "./data";
 
 // Helpers para simular latencia de API
