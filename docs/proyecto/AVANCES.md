@@ -29,7 +29,7 @@
 ---
 
 ## Avance 2 — Primer recorrido funcional
-**Estado:** ✅ Verificado en local — pendiente despliegue en Cloudflare  
+**Estado:** ✅ Completado y desplegado en Cloudflare Pages  
 **Fecha de inicio:** 2026-07-19  
 **Plataforma:** Cloudflare Pages
 
@@ -66,10 +66,11 @@ Regreso al Home
 - [x] El cierre siempre mira hacia el siguiente paso
 - [x] El regreso al Home funciona sin fricción
 - [x] La terminología usa Mérito y Constancia (no XP ni Racha)
-- [ ] La aplicación funciona y es accesible en Cloudflare Pages
+- [x] La aplicación funciona y es accesible en Cloudflare Pages
 
 ### URL de producción
 
-> _Pendiente de primer despliegue_
+- **Producción:** https://exmero.pages.dev
+- **Primer deployment:** https://2c1a6518.exmero.pages.dev
 
 ---
