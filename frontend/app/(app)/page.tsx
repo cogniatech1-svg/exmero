@@ -31,7 +31,6 @@ export default async function HomePage() {
     : null;
 
   const misionHoy = misiones.find((m) => !m.completada) ?? misiones[0];
-  const meritoPct = Math.round((usuario.merito / usuario.meritoSiguienteNivel) * 100);
   const primerNombre = usuario.nombre.split(" ")[0];
 
   return (
@@ -150,23 +149,6 @@ export default async function HomePage() {
           />
         </div>
 
-        <div className="pt-2 border-t border-border">
-          <div className="flex justify-between items-center mb-1.5">
-            <span className="text-xs font-medium text-foreground-muted">
-              Nivel {usuario.nivel}
-            </span>
-            <span className="text-xs text-foreground-muted">
-              {usuario.merito.toLocaleString("es-CO")} /{" "}
-              {usuario.meritoSiguienteNivel.toLocaleString("es-CO")} Mérito
-            </span>
-          </div>
-          <div className="h-1.5 bg-surface-2 rounded-full overflow-hidden">
-            <div
-              className="h-full bg-gold-400 rounded-full"
-              style={{ width: `${meritoPct}%` }}
-            />
-          </div>
-        </div>
       </section>
 
     </div>
