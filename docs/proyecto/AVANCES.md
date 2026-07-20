@@ -115,3 +115,37 @@ La Biblioteca Visual de Mero usa ahora **exclusivamente WebP con transparencia**
 Componente: `<MeroScene id={MERO_SCENES.xxx} />` — nunca referenciar `/mero/...` directamente.
 
 ---
+
+## Biblioteca Visual Mero — v1.0 CONGELADA
+**Estado:** 🔒 Congelada  
+**Fecha:** 2026-07-20  
+**Auditoría:** 28/28 escenas aprobadas manualmente
+
+### Resultado de auditoría visual
+
+| Categoría | Escenas | Resultado |
+|---|---|---|
+| estados | 6 | ✅ todas aprobadas |
+| gestos | 2 | ✅ todas aprobadas |
+| estudio | 5 | ✅ todas aprobadas |
+| simulacros | 5 | ✅ todas aprobadas |
+| gamificacion | 5 | ✅ todas aprobadas |
+| ayuda | 5 | ✅ todas aprobadas |
+
+### Criterios verificados en las 28 escenas
+
+- [x] Sin halos blancos ni píxeles residuales de fondo
+- [x] Bordes limpios, sin recortes accidentales de la silueta
+- [x] Elementos compuestos preservados (burbujas, texto, badges, confeti, marcos sticker)
+- [x] Sin transparencias por error en partes del personaje
+- [x] Sin deformaciones ni cambios de proporción
+- [x] Tamaño consistente (840px lado mayor) en toda la biblioteca
+
+### Reglas de congelamiento
+
+- No agregar ni reemplazar assets sin justificación documentada en `DECISIONES_DE_DISENO.md`
+- Todo nuevo asset debe seguir el mismo proceso: WebP + alpha + 840px + flood-fill
+- La fuente canónica es `manifest.ts` — nunca referenciar rutas `/mero/...` directamente
+- Componente oficial: `<MeroScene id={MERO_SCENES.xxx} />`
+
+---
