@@ -6,18 +6,15 @@ import type {
   Logro,
 } from "@/types";
 
-// Fuente canónica: docs/producto/MVP_DATA_MODEL.md
-// Si hay discrepancia entre este archivo y ese documento, el documento prevalece.
-
 export const mockUsuario: Usuario = {
   id: "usr_001",
   nombre: "Valentina Ríos Herrera",
   email: "valentina.rios@ejemplo.co",
   nivel: 3,
-  xp: 2340,
-  xpSiguienteNivel: 3000,
-  rachaActual: 7,
-  rachaMáxima: 12,
+  merito: 2340,
+  meritoSiguienteNivel: 3000,
+  constanciaActual: 7,
+  constanciaMaxima: 12,
   convocatoriaActivaId: "conv_001",
 };
 
@@ -75,31 +72,43 @@ export const mockMisiones: MisionDiaria[] = [
     titulo: "Razonamiento numérico básico",
     descripcion:
       "Practica series numéricas y proporciones — el área con mayor impacto en tu puntaje ahora mismo.",
+    proposito:
+      "Razonamiento Cuantitativo tiene un peso del 25 % en tu examen y es donde tienes más margen de mejora. Cada sesión aquí mueve más tu probabilidad que en cualquier otra área.",
+    competencia: "Razonamiento Cuantitativo",
     tipo: "practica",
     moduloId: "mod_03",
     duracionMin: 20,
+    totalPreguntas: 8,
     completada: false,
-    xpRecompensa: 150,
+    meritoRecompensa: 150,
   },
   {
     id: "mision-002",
     titulo: "Repaso Comportamentales",
     descripcion: "Refuerza ética y toma de decisiones bajo presión.",
+    proposito:
+      "Llevas 5 días sin practicar Comportamentales. Con un peso del 25 % en el examen, es momento de refrescar lo aprendido.",
+    competencia: "Comportamentales",
     tipo: "repaso",
     moduloId: "mod_02",
     duracionMin: 15,
+    totalPreguntas: 8,
     completada: false,
-    xpRecompensa: 100,
+    meritoRecompensa: 100,
   },
   {
     id: "mision-003",
     titulo: "Mini simulacro: 20 preguntas mixtas",
     descripcion: "Simula las condiciones reales del examen CNSC.",
+    proposito:
+      "Ya tienes suficiente base en Competencias Básicas para probar en condiciones reales. Un simulacro corto te muestra cómo vas a rendir el día del examen.",
+    competencia: "Mixta",
     tipo: "simulacro",
     moduloId: "mod_01",
     duracionMin: 25,
+    totalPreguntas: 20,
     completada: false,
-    xpRecompensa: 200,
+    meritoRecompensa: 200,
   },
 ];
 
@@ -107,10 +116,9 @@ export const mockEstadisticas: EstadisticasProgreso = {
   preguntasHoy: 12,
   preguntasSemana: 47,
   tiempoEstudioHoyMin: 34,
-  rachaActual: 7,
+  constanciaActual: 7,
   probabilidadActual: 68,
   tendencia: "subiendo",
-  // Preguntas practicadas por día: lun–dom de la semana actual
   historialSemanal: [8, 12, 6, 15, 12, 0, 0],
 };
 
@@ -125,8 +133,8 @@ export const mockLogros: Logro[] = [
   },
   {
     id: "log_02",
-    nombre: "Racha de 3 días",
-    descripcion: "Estudiaste 3 días seguidos.",
+    nombre: "Constancia de 3 días",
+    descripcion: "Entrenaste 3 días seguidos.",
     icono: "🔥",
     desbloqueado: true,
     fechaDesbloqueo: "2026-06-20",
@@ -141,22 +149,21 @@ export const mockLogros: Logro[] = [
   },
   {
     id: "log_04",
-    nombre: "Racha de 7 días",
-    descripcion: "Estudiaste 7 días seguidos.",
+    nombre: "Constancia de 7 días",
+    descripcion: "Entrenaste 7 días seguidos.",
     icono: "💎",
     desbloqueado: true,
     fechaDesbloqueo: "2026-07-18",
   },
   {
     id: "log_05",
-    nombre: "Racha de 14 días",
-    descripcion: "Estudiaste 14 días consecutivos.",
+    nombre: "Constancia de 14 días",
+    descripcion: "Entrenaste 14 días consecutivos.",
     icono: "🎯",
     desbloqueado: false,
   },
 ];
 
-// Mensaje contextual de Mero — variante activa: racha de 7 días
-// Ver MVP_DATA_MODEL.md para la tabla completa de variantes
+// Mensaje contextual de Mero — variante: constancia de 7 días
 export const mockMensajeMero =
-  "¡7 días seguidos, Valentina! Razonamiento Cuantitativo te está esperando — ahí está tu próximo salto.";
+  "7 días seguidos, Valentina. Razonamiento Cuantitativo te está esperando — ahí está tu próximo salto.";

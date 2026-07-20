@@ -6,10 +6,10 @@ export interface Usuario {
   email: string;
   avatar?: string;
   nivel: number;
-  xp: number;
-  xpSiguienteNivel: number;
-  rachaActual: number;
-  rachaMáxima: number;
+  merito: number;
+  meritoSiguienteNivel: number;
+  constanciaActual: number;
+  constanciaMaxima: number;
   convocatoriaActivaId?: string;
 }
 
@@ -48,11 +48,44 @@ export interface MisionDiaria {
   id: string;
   titulo: string;
   descripcion: string;
+  proposito: string;       // por qué esta misión hoy — visible antes de iniciar
+  competencia: string;     // nombre de la competencia
   tipo: TipoMision;
   moduloId: string;
   duracionMin: number;
+  totalPreguntas: number;
   completada: boolean;
-  xpRecompensa: number;
+  meritoRecompensa: number;
+}
+
+// ─── Pregunta de práctica ────────────────────────────────────────────────────
+
+export interface OpcionRespuesta {
+  id: string;
+  texto: string;
+}
+
+export interface Pregunta {
+  id: string;
+  competenciaId: string;
+  enunciado: string;
+  opciones: OpcionRespuesta[];
+  correctaId: string;
+  explicacion: string; // solo se muestra tras respuesta incorrecta
+  dificultad: "baja" | "media" | "alta";
+}
+
+// ─── Resultado de sesión ─────────────────────────────────────────────────────
+
+export interface ResultadoSesion {
+  misionId: string;
+  competencia: string;
+  totalPreguntas: number;
+  correctas: number;
+  meritoGanado: number;
+  dominioAntes: number;   // 0–100
+  dominioDespues: number; // 0–100
+  constanciaDia: boolean;
 }
 
 // ─── Progreso / estadísticas ─────────────────────────────────────────────────
@@ -63,10 +96,10 @@ export interface EstadisticasProgreso {
   preguntasHoy: number;
   preguntasSemana: number;
   tiempoEstudioHoyMin: number;
-  rachaActual: number;
+  constanciaActual: number;
   probabilidadActual: number;
   tendencia: TendenciaProgreso;
-  historialSemanal: number[]; // 7 valores, % promedio por día (lun→dom)
+  historialSemanal: number[];
 }
 
 // ─── Gamificación ────────────────────────────────────────────────────────────
@@ -75,7 +108,7 @@ export interface Logro {
   id: string;
   nombre: string;
   descripcion: string;
-  icono: string; // emoji
+  icono: string;
   desbloqueado: boolean;
   fechaDesbloqueo?: string;
 }

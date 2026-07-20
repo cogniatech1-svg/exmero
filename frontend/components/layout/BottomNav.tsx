@@ -2,15 +2,15 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { House, Map, Target, BarChart2, User, type LucideIcon } from "lucide-react";
+import { House, Radio, Target, BarChart2, User, type LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const NAV_ITEMS = [
-  { href: "/",           icon: House,     label: "Inicio"     },
-  { href: "/ruta",       icon: Map,       label: "Ruta"       },
-  { href: "/simulacros", icon: Target,    label: "Simulacros" },
-  { href: "/progreso",   icon: BarChart2, label: "Progreso"   },
-  { href: "/perfil",     icon: User,      label: "Perfil"     },
+  { href: "/",            icon: House,     label: "Inicio"         },
+  { href: "/radar",       icon: Radio,     label: "Radar"          },
+  { href: "/preparacion", icon: Target,    label: "Mi Preparación" },
+  { href: "/progreso",    icon: BarChart2, label: "Mi Progreso"    },
+  { href: "/perfil",      icon: User,      label: "Perfil"         },
 ];
 
 export function BottomNav() {
@@ -53,7 +53,7 @@ function NavItem({
   return (
     <Link
       href={href}
-      className="flex-1 flex flex-col items-center gap-0.5 pt-2 pb-1"
+      className="flex-1 flex flex-col items-center gap-0.5 pt-2 pb-1 min-w-0"
     >
       <Icon
         size={22}
@@ -62,7 +62,7 @@ function NavItem({
       />
       <span
         className={cn(
-          "text-[11px] font-semibold leading-none",
+          "text-[10px] font-semibold leading-none text-center truncate w-full px-0.5",
           active ? "text-primary" : "text-foreground-subtle"
         )}
       >

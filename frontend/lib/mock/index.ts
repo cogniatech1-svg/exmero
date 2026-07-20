@@ -7,7 +7,11 @@ export {
   mockMensajeMero,
 } from "./data";
 
-// Helpers para simular latencia de API
+export { getPreguntasMision } from "./preguntas";
+
+function delay(ms: number) {
+  return new Promise<void>((resolve) => setTimeout(resolve, ms));
+}
 
 export async function getMockUsuario() {
   await delay(80);
@@ -40,6 +44,8 @@ export async function getMockLogros() {
   return mockLogros;
 }
 
-function delay(ms: number) {
-  return new Promise<void>((resolve) => setTimeout(resolve, ms));
+export async function getMockMisionActiva() {
+  await delay(80);
+  const { mockMisiones } = await import("./data");
+  return mockMisiones.find((m) => !m.completada) ?? mockMisiones[0];
 }
