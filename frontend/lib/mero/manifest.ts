@@ -34,7 +34,7 @@ export type MeroContext =
 export interface MeroAsset {
   id: string;
   category: MeroCategory;
-  ext: "jpg" | "png";
+  ext: "webp";
   alt: string;
   emotion: MeroEmotion;
   action: string;
@@ -47,7 +47,7 @@ export const MERO_ASSETS: readonly MeroAsset[] = [
   {
     id: "bienvenido",
     category: "estados",
-    ext: "jpg",
+    ext: "webp",
     alt: "Mero da la bienvenida con los brazos abiertos",
     emotion: "joy",
     action: "welcoming",
@@ -57,7 +57,7 @@ export const MERO_ASSETS: readonly MeroAsset[] = [
   {
     id: "feliz",
     category: "estados",
-    ext: "png",
+    ext: "webp",
     alt: "Mero sonríe feliz",
     emotion: "joy",
     action: "smiling",
@@ -67,7 +67,7 @@ export const MERO_ASSETS: readonly MeroAsset[] = [
   {
     id: "celebrando",
     category: "estados",
-    ext: "jpg",
+    ext: "webp",
     alt: "Mero celebra saltando de alegría",
     emotion: "celebration",
     action: "celebrating",
@@ -77,7 +77,7 @@ export const MERO_ASSETS: readonly MeroAsset[] = [
   {
     id: "muy-bien",
     category: "estados",
-    ext: "jpg",
+    ext: "webp",
     alt: 'Mero gesticula "¡muy bien!"',
     emotion: "encouragement",
     action: "praising",
@@ -87,7 +87,7 @@ export const MERO_ASSETS: readonly MeroAsset[] = [
   {
     id: "saludando",
     category: "estados",
-    ext: "jpg",
+    ext: "webp",
     alt: "Mero saluda con la mano",
     emotion: "joy",
     action: "waving",
@@ -97,7 +97,7 @@ export const MERO_ASSETS: readonly MeroAsset[] = [
   {
     id: "vamos",
     category: "estados",
-    ext: "jpg",
+    ext: "webp",
     alt: "Mero anima con energía: ¡vamos!",
     emotion: "encouragement",
     action: "cheering",
@@ -108,7 +108,7 @@ export const MERO_ASSETS: readonly MeroAsset[] = [
   {
     id: "pulgar-arriba",
     category: "gestos",
-    ext: "jpg",
+    ext: "webp",
     alt: "Mero da un pulgar arriba de aprobación",
     emotion: "encouragement",
     action: "approving",
@@ -118,7 +118,7 @@ export const MERO_ASSETS: readonly MeroAsset[] = [
   {
     id: "senalando-arriba",
     category: "gestos",
-    ext: "jpg",
+    ext: "webp",
     alt: "Mero señala hacia arriba",
     emotion: "neutral",
     action: "pointing-up",
@@ -129,7 +129,7 @@ export const MERO_ASSETS: readonly MeroAsset[] = [
   {
     id: "pensando",
     category: "estudio",
-    ext: "jpg",
+    ext: "webp",
     alt: "Mero piensa con la mano en la barbilla",
     emotion: "focus",
     action: "thinking",
@@ -139,7 +139,7 @@ export const MERO_ASSETS: readonly MeroAsset[] = [
   {
     id: "explicando",
     category: "estudio",
-    ext: "jpg",
+    ext: "webp",
     alt: "Mero explica gesticulando con las manos",
     emotion: "neutral",
     action: "explaining",
@@ -149,7 +149,7 @@ export const MERO_ASSETS: readonly MeroAsset[] = [
   {
     id: "leyendo",
     category: "estudio",
-    ext: "jpg",
+    ext: "webp",
     alt: "Mero lee concentrado",
     emotion: "focus",
     action: "reading",
@@ -159,7 +159,7 @@ export const MERO_ASSETS: readonly MeroAsset[] = [
   {
     id: "estudiando-en-escritorio",
     category: "estudio",
-    ext: "jpg",
+    ext: "webp",
     alt: "Mero estudia en su escritorio",
     emotion: "focus",
     action: "studying",
@@ -169,7 +169,7 @@ export const MERO_ASSETS: readonly MeroAsset[] = [
   {
     id: "escribiendo",
     category: "estudio",
-    ext: "jpg",
+    ext: "webp",
     alt: "Mero escribe tomando notas",
     emotion: "focus",
     action: "writing",
@@ -180,7 +180,7 @@ export const MERO_ASSETS: readonly MeroAsset[] = [
   {
     id: "marcando-correcta",
     category: "simulacros",
-    ext: "jpg",
+    ext: "webp",
     alt: "Mero marca una respuesta correcta",
     emotion: "joy",
     action: "marking-correct",
@@ -190,7 +190,7 @@ export const MERO_ASSETS: readonly MeroAsset[] = [
   {
     id: "marcando-incorrecta",
     category: "simulacros",
-    ext: "jpg",
+    ext: "webp",
     alt: "Mero marca una respuesta incorrecta",
     emotion: "concern",
     action: "marking-incorrect",
@@ -200,7 +200,7 @@ export const MERO_ASSETS: readonly MeroAsset[] = [
   {
     id: "completado",
     category: "simulacros",
-    ext: "jpg",
+    ext: "webp",
     alt: "Mero señala que la sesión está completada",
     emotion: "pride",
     action: "completing",
@@ -210,7 +210,7 @@ export const MERO_ASSETS: readonly MeroAsset[] = [
   {
     id: "tiempo-agotandose",
     category: "simulacros",
-    ext: "jpg",
+    ext: "webp",
     alt: "Mero advierte que el tiempo se agota",
     emotion: "concern",
     action: "warning-time",
@@ -220,7 +220,7 @@ export const MERO_ASSETS: readonly MeroAsset[] = [
   {
     id: "entregando-examen",
     category: "simulacros",
-    ext: "jpg",
+    ext: "webp",
     alt: "Mero entrega el examen completado",
     emotion: "pride",
     action: "submitting",
@@ -231,7 +231,7 @@ export const MERO_ASSETS: readonly MeroAsset[] = [
   {
     id: "racha",
     category: "gamificacion",
-    ext: "jpg",
+    ext: "webp",
     alt: "Mero celebra la racha de días estudiando",
     emotion: "celebration",
     action: "celebrating-streak",
@@ -241,7 +241,7 @@ export const MERO_ASSETS: readonly MeroAsset[] = [
   {
     id: "nivel-nuevo",
     category: "gamificacion",
-    ext: "jpg",
+    ext: "webp",
     alt: "Mero celebra haber subido de nivel",
     emotion: "celebration",
     action: "leveling-up",
@@ -251,7 +251,7 @@ export const MERO_ASSETS: readonly MeroAsset[] = [
   {
     id: "trofeo",
     category: "gamificacion",
-    ext: "jpg",
+    ext: "webp",
     alt: "Mero sostiene un trofeo",
     emotion: "pride",
     action: "holding-trophy",
@@ -261,7 +261,7 @@ export const MERO_ASSETS: readonly MeroAsset[] = [
   {
     id: "medalla",
     category: "gamificacion",
-    ext: "jpg",
+    ext: "webp",
     alt: "Mero luce una medalla de logro",
     emotion: "pride",
     action: "showing-medal",
@@ -271,7 +271,7 @@ export const MERO_ASSETS: readonly MeroAsset[] = [
   {
     id: "nuevo-logro",
     category: "gamificacion",
-    ext: "jpg",
+    ext: "webp",
     alt: "Mero anuncia un nuevo logro desbloqueado",
     emotion: "celebration",
     action: "announcing-achievement",
@@ -282,7 +282,7 @@ export const MERO_ASSETS: readonly MeroAsset[] = [
   {
     id: "sin-conexion",
     category: "ayuda",
-    ext: "jpg",
+    ext: "webp",
     alt: "Mero indica que no hay conexión a internet",
     emotion: "concern",
     action: "showing-no-connection",
@@ -292,7 +292,7 @@ export const MERO_ASSETS: readonly MeroAsset[] = [
   {
     id: "sin-datos",
     category: "ayuda",
-    ext: "jpg",
+    ext: "webp",
     alt: "Mero señala que no hay datos disponibles",
     emotion: "concern",
     action: "showing-empty",
@@ -302,7 +302,7 @@ export const MERO_ASSETS: readonly MeroAsset[] = [
   {
     id: "no-encontrado",
     category: "ayuda",
-    ext: "jpg",
+    ext: "webp",
     alt: "Mero no encontró lo que buscabas",
     emotion: "concern",
     action: "showing-not-found",
@@ -312,7 +312,7 @@ export const MERO_ASSETS: readonly MeroAsset[] = [
   {
     id: "no-te-rindas",
     category: "ayuda",
-    ext: "jpg",
+    ext: "webp",
     alt: "Mero anima: no te rindas, sigue intentando",
     emotion: "resilience",
     action: "encouraging",
@@ -322,7 +322,7 @@ export const MERO_ASSETS: readonly MeroAsset[] = [
   {
     id: "intentalo-otra-vez",
     category: "ayuda",
-    ext: "jpg",
+    ext: "webp",
     alt: "Mero invita a intentarlo otra vez",
     emotion: "resilience",
     action: "retrying",
