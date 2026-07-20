@@ -74,3 +74,44 @@ Regreso al Home
 - **Primer deployment:** https://2c1a6518.exmero.pages.dev
 
 ---
+
+## Mejora 2.1 — Biblioteca Visual Mero: migración a WebP con transparencia
+**Estado:** ✅ Completado y desplegado en producción  
+**Fecha:** 2026-07-20  
+**PR:** #10 `feature/mvp-01-home` → `main`
+
+### Objetivo
+
+Convertir todos los activos visuales de Mero de JPG/PNG opaco a WebP con canal alpha (fondo transparente), optimizados para Next.js y Cloudflare Pages.
+
+### Cambios realizados
+
+- 28 activos convertidos (22 JPG + 6 PNG → 28 WebP @ 840px)
+- Fondo blanco removido con flood-fill desde los 4 bordes
+- `manifest.ts` actualizado: todos los assets usan `ext: "webp"`
+- Archivos originales eliminados tras verificación en preview
+
+### Resultado
+
+| | Antes | Después |
+|---|---|---|
+| Formato | 22 JPG + 6 PNG | 28 WebP con alpha |
+| Tamaño total | ~3.9 MB | 1.4 MB |
+| Promedio/asset | ~140 KB | 49.5 KB |
+| Reducción | — | **64% (~2.5 MB)** |
+
+### Verificación completada
+
+- [x] 28 escenas cargan sin errores en producción
+- [x] `manifest.ts` referencia únicamente `.webp`
+- [x] Cero errores 404 en consola
+- [x] Transparencias correctas, sin halos blancos
+- [x] Home funciona correctamente (bloque Mérito/Nivel eliminado según HOME_FUNCIONAL.md)
+- [x] Cero referencias residuales a `.jpg` o `.png` en el código
+
+### Fuente única de imágenes
+
+La Biblioteca Visual de Mero usa ahora **exclusivamente WebP con transparencia**.  
+Componente: `<MeroScene id={MERO_SCENES.xxx} />` — nunca referenciar `/mero/...` directamente.
+
+---
