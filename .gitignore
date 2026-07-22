@@ -44,3 +44,6 @@ desktop.ini
 
 # Testing
 coverage/
+
+# Assets fuente Mero (PNGs originales, no distribuir en repo)
+frontend/public/mero/sin_fondo/
